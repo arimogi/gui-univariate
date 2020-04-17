@@ -28,7 +28,7 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         QtWidgets.QMainWindow.__init__(self)
         Ui_MainWindow.__init__(self)
         self.setupUi(self)
-        self.action_Exit.clicked.connect(self.ExitApp)
+        #self.action_Exit.clicked.connect(self.ExitApp)
 
     def ExitApp(self):
         sys.exit()
