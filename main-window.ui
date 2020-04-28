@@ -2,40 +2,181 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="windowModality">
-   <enum>Qt::ApplicationModal</enum>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>500</height>
+    <width>532</width>
+    <height>421</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>500</width>
-    <height>500</height>
-   </size>
-  </property>
-  <property name="maximumSize">
-   <size>
-    <width>1024</width>
-    <height>768</height>
-   </size>
-  </property>
   <property name="windowTitle">
-   <string>Univariate Control Chart</string>
+   <string>Application Univariate - Juni Asrini</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btnProcess">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;Process</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAbout">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>340</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>&amp;About</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txFile1">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>70</y>
+      <width>311</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txFile2">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>110</y>
+      <width>311</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbTitle">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>511</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Application Univariate </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbFile1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>File 1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbFile2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>File 2</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnBrowse1">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>70</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Browse...</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnBrowse2">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>110</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Browse...</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="txLog">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>511</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>Log of process...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lbLog">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Log Process:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnExit">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>340</y>
+      <width>89</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>E&amp;xit</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
-     <height>21</height>
+     <width>532</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File">
@@ -43,7 +184,8 @@
      <string>&amp;File</string>
     </property>
     <addaction name="separator"/>
-    <addaction name="action_Open"/>
+    <addaction name="action_Open1"/>
+    <addaction name="action_Open2"/>
     <addaction name="action_Close"/>
     <addaction name="separator"/>
     <addaction name="action_Exit"/>
@@ -54,31 +196,21 @@
     </property>
     <addaction name="action_About"/>
    </widget>
-   <widget class="QMenu" name="menuData">
-    <property name="title">
-     <string>&amp;Data</string>
-    </property>
-    <addaction name="action_Process"/>
-   </widget>
    <addaction name="menu_File"/>
-   <addaction name="menuData"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_Open">
+  <action name="action_Open1">
    <property name="text">
-    <string>&amp;Open</string>
+    <string>Open File &amp;1</string>
    </property>
   </action>
   <action name="action_Close">
    <property name="text">
-    <string>&amp;Close</string>
+    <string>&amp;Close Files</string>
    </property>
   </action>
   <action name="action_Exit">
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
    <property name="text">
     <string>E&amp;xit</string>
    </property>
@@ -88,9 +220,9 @@
     <string>&amp;About</string>
    </property>
   </action>
-  <action name="action_Process">
+  <action name="action_Open2">
    <property name="text">
-    <string>P&amp;rocess</string>
+    <string>Open File &amp;2</string>
    </property>
   </action>
  </widget>
